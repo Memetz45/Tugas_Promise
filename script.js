@@ -4,9 +4,7 @@ function eduNews(){
     fetch('https://newsapi.org/v2/everything?apiKey=e78496aa34f54687b5fb824a75ebf5d3&q=' + inputKeyword.value)
     .then(res => res.json())
     .then(function(res){
-      console.log(res.totalResults);
       if(res.totalResults > 0){
-        console.log(res.articles);
         const news = res.articles;
         let cards = '';
         news.forEach(m => cards += showCards(m));
