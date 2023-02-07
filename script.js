@@ -5,6 +5,7 @@ function eduNews(){
     .then(res => res.json())
     .then(function(res){
       if(res.totalResults > 0){
+        console.log(res.articles);
         const news = res.articles;
         let cards = '';
         news.forEach(m => cards += showCards(m));
