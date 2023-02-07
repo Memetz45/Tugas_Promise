@@ -8,10 +8,10 @@ function eduNews(){
         const news = res.articles;
         let cards = '';
         news.forEach(m => cards += showCards(m));
-        const newsContainer = document.querySelector('.news-container');
+        const newsContainer = document.querySelector('.edunews-container');
         newsContainer.innerHTML = cards;
       }else{
-        const newsError = document.querySelector('.news-container');
+        const newsError = document.querySelector('edunews-container');
         const hasilError = `<h1 class="text-center">Data Tidak Ditemukan... :)</h1>`;
         newsError.innerHTML = hasilError;
       };
@@ -20,7 +20,7 @@ function eduNews(){
   
 //   fungsi interaktif berupa click button dan keyup Enter
   const searchButton = document.querySelector('.search-button');
-  searchButton.addEventListenner('click', function(){
+  searchButton.addEventListener('click', function(){
       eduNews();
   });
   const inptKywrd = document.querySelector('.input-keyword');
