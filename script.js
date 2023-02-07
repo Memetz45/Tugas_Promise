@@ -1,9 +1,10 @@
-// fungsi pemanggialan API dan menampilkan hasil menggunakan fetch
+// fungsi pemanggilan API dan menampilkan hasil menggunakan fetch
 function eduNews(){
     const inputKeyword = document.querySelector('.input-keyword');
     fetch('https://newsapi.org/v2/everything?apiKey=e78496aa34f54687b5fb824a75ebf5d3&q=' + inputKeyword.value)
     .then(res => res.json())
     .then(function(res){
+      console.log(res.totalResults);
       if(res.totalResults > 0){
         console.log(res.articles);
         const news = res.articles;
@@ -25,11 +26,11 @@ function eduNews(){
       eduNews();
   });
   const inptKywrd = document.querySelector('.input-keyword');
-  inptKywrd.addEventListenner('keyup', function(key){
-    if(key.keyCode === 13){
-      eduNews();
+  inptKywrd.addEventListener('keyup', function (key) {
+    if (key.keyCode === 13) {
+        eduNews();
     };
-  });
+})
   
 //   fungsi pembuatan card untuk menempatkan content news
   function showCards(m) {
