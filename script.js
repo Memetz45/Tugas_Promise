@@ -11,7 +11,7 @@ function eduNews(){
         const newsContainer = document.querySelector('.edunews-container');
         newsContainer.innerHTML = cards;
       }else{
-        const newsError = document.querySelector('edunews-container');
+        const newsError = document.querySelector('.edunews-container');
         const hasilError = `<h1 class="text-center">Data Tidak Ditemukan... :)</h1>`;
         newsError.innerHTML = hasilError;
       };
